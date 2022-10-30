@@ -15,6 +15,7 @@ module.exports = {
     },
     async update(req, res, next) {
         /*try {
+            reqparams.id
             await knex('users').update().where();
             return res.send();
         } catch (error) {
@@ -23,6 +24,7 @@ module.exports = {
     },
     async delete(req, res, next) {
         /*try {
+            reqparams.id
             await knex('users').delete().where();
             return res.send();
         } catch (error) {

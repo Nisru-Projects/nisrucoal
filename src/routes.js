@@ -16,7 +16,7 @@ module.exports = (app) => {
     })
     app.get('/users', UserController.index);
     //app.post('/users', UserController.create);
-    //app.put('/users', UserController.update);
-    //app.delete('/users', UserController.delete);
+    //app.put('/users/:id', UserController.update);
+    //app.delete('/users/:id', UserController.delete);
     return app; 
 };
