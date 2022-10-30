@@ -15,5 +15,8 @@ module.exports = (app) => {
         res.send({ msg: 'Success!' });
     })
     app.get('/users', UserController.index);
+    //app.post('/users', UserController.create);
+    //app.put('/users', UserController.update);
+    //app.delete('/users', UserController.delete);
     return app; 
 };
