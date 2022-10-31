@@ -1,8 +1,10 @@
 exports.up = function(knex) {
   
     return knex.schema.createTable('users', table => {
+      // Internal Id
+      table.increments('id').primary();
       // Discord id of user
-      table.bigint('discord_id').primary().notNullable();
+      table.bigint('discord_id').notNullable();
       // Array of permissions
       table.specificType('permissions', 'text ARRAY').notNullable();
       // Acess and refresh token
