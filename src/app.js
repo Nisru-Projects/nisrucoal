@@ -1,5 +1,4 @@
 const express = require('express');
-const router = express.Router();
 const app = express();
 const cors = require('cors');
 const session = require('express-session');
@@ -12,9 +11,10 @@ const store = new KnexSessionStore({
 });
 require('./strategies/discord');
 
+const ApiRoutes = require('./routes')
+
 module.exports = () => {
     
-    const routes = require('./routes')(router, {});
 
     // Session
 
@@ -41,7 +41,7 @@ module.exports = () => {
 
     // Routes
 
-    app.use('/api', routes);
+    app.use('/api', ApiRoutes);
 
     // notFound
 
