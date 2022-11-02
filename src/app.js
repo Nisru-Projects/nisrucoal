@@ -4,6 +4,12 @@ const app = express();
 const cors = require('cors');
 const session = require('express-session');
 const passport = require('passport');
+const knex = require('./database');
+const KnexSessionStore = require('connect-session-knex')(session);
+const store = new KnexSessionStore({
+    knex,
+    tablename: 'sessions',
+});
 require('./strategies/discord');
 
 module.exports = () => {
@@ -12,16 +18,18 @@ module.exports = () => {
 
     // Session
 
+
     app.use(cors({ origin: ['localhost:3000'], credentials: true }));
     app.use(session({
-        secret: 'KOFASDPOJASPJDAJDASJOJU30981U23UD08ASIHOADKLPAJSPDAUJOIDHA',
+        secret: 'KOFASD134POJASPJDAJDASJOJU30981U23UD08A134SIHOADKLPAJSPDA134UJOIDHA',
         resave: false,
         saveUninitialized: false,
         cookie: {
-            maxAge: 1000 * 60 * 60 * 24 * 7 * 2,
+            maxAge: 1000 * 60 * 60 * 24 * 7,
             httpOnly: false,
             secure: false,
-        }
+        },
+        store
     }));
 
     // Passport middleware

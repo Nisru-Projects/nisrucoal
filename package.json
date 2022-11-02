@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Nisru-Projects/nisrucoal.git",
-  "author": "Eman134 <kaykeeman@gmail.com>",
+  "author": "Eman134#3237 <kaykeeman@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "connect-session-knex": "^3.0.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.2",
     "express": "^4.18.1",
