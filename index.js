@@ -3,7 +3,7 @@ const port = process.env.PORT || 3001;
 
 async function main() {
     
-    const app = require('./src/app')();
+    const app = require('./src/utils/app')();
 
     try {
         app.listen(port, () => {

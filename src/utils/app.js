@@ -3,15 +3,15 @@ const app = express();
 const cors = require('cors');
 const session = require('express-session');
 const passport = require('passport');
-const knex = require('./database');
+const knex = require('../database');
 const KnexSessionStore = require('connect-session-knex')(session);
 const store = new KnexSessionStore({
     knex,
     tablename: 'sessions',
 });
-require('./strategies/discord');
+require('../strategies/discord');
 
-const ApiRoutes = require('./routes')
+const ApiRoutes = require('../routes')
 
 module.exports = () => {
     

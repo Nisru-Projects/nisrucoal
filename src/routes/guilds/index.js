@@ -1,9 +1,8 @@
-const { isAuthenticated } = require('../../middlewares');
+const GuildController = require('../../controllers/GuildController');
+const { isAuthenticated } = require('../../utils/middlewares');
 
 const router = require('express').Router();
 
-router.get('/', isAuthenticated, (req, res) => {
-    res.sendStatus(200);
-})
+router.get('/', isAuthenticated, GuildController.index)
 
 module.exports = router;

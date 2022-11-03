@@ -18,4 +18,8 @@ router.get('/status', (req, res) => {
     return req.user ? res.send(req.user) : res.send({ msg: 'Unauthorized' });
 });
 
+//.post('/users', UserController.create);
+//.put('/users/:id', UserController.update);
+//.delete('/users/:id', UserController.delete);
+
 module.exports = router;
