@@ -1,6 +1,5 @@
 const axios = require('axios');
 const { DISCORD_API_URL } = require('../../utils/constants');
-const knex = require('../../database');
 
 module.exports = {
     async getBotGuildsService() {
