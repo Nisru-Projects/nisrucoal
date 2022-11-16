@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/Nisru-Projects/nisrucoal.git",
-  "author": "Eman134#3237 <kaykeeman@gmail.com>",
+  "author": "Eman134 <kaykeeman@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "axios": "^1.1.3",

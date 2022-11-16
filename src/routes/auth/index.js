@@ -10,7 +10,7 @@ router.get('/discord', passport.authenticate('discord'), (req, res) => {
     res.sendStatus(200);
 })
 router.get('/discord/redirect', passport.authenticate('discord'), (req, res) => {
-    res.send({ msg: 'Success!' });
+    res.redirect('http://localhost:3000/dashboard');
 })
 router.get('/users', UserController.index);
 

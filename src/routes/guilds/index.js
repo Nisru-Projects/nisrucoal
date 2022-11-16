@@ -5,4 +5,7 @@ const router = require('express').Router();
 
 router.get('/', isAuthenticated, GuildController.index)
 
+// api/guilds/:id/permissions
+router.get('/:id/permissions', isAuthenticated, GuildController.permissions)
+
 module.exports = router;
