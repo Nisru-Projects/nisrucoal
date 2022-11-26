@@ -23,10 +23,6 @@ passport.use(new DiscordStrategy({
     scope: scopes,
 }, async (accessToken, refreshToken, profile, done) => {
 
-    //console.log(profile);
-    //console.log(accessToken);
-    //console.log(refreshToken);
-
     try {
         const userExists = await knex('users').where({ discord_id: profile.id }).first();
         if (userExists) {

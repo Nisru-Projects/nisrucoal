@@ -39,6 +39,8 @@ module.exports = () => {
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
 
+    app.use((req, res, next) => setTimeout(() => next(), 800))
+
     // Routes
 
     app.use('/api', ApiRoutes);
