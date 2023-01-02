@@ -14,14 +14,10 @@ require('../strategies/discord');
 const ApiRoutes = require('../routes')
 
 module.exports = () => {
-    
-
-    // Session
-
 
     app.use(cors({ origin: ['localhost:3000'], credentials: true }));
     app.use(session({
-        secret: 'KOFASD134POJASPJDAJDASJOJU30981U23UD08A134SIHOADKLPAJSPDA134UJOIDHA',
+        secret: process.env.SESSION_SECRET,
         resave: false,
         saveUninitialized: false,
         cookie: {

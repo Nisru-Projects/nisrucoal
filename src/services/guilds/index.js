@@ -17,6 +17,16 @@ async function getUserGuildsService(access_token) {
     });
     return response.data;
 }
+
+async function getUser(access_token) {
+    const response = await axios.get(`${DISCORD_API_URL}/users/@me`, {
+        headers: {
+            Authorization: `Bearer ${access_token}`
+        }
+    });
+    return response.data;
+}
+
 async function getMutualGuildsService(access_token) {
     const botGuilds = await getBotGuildsService()
     const userGuilds = await getUserGuildsService(access_token)
@@ -28,5 +38,6 @@ async function getMutualGuildsService(access_token) {
 module.exports = {
     getBotGuildsService,
     getUserGuildsService,
-    getMutualGuildsService
+    getMutualGuildsService,
+    getUser
 }
